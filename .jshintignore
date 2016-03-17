@@ -1,0 +1,3 @@
+/node_modules/
+client/js/
+plugins/**/node_modules/**

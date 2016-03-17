@@ -1,0 +1,43 @@
+{
+  "name": "dependency-injection-examples",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node socket/server.js",
+    "app": "node server/server.js"
+  },
+  "dependencies": {
+    "architect-chance": "2.2.0",
+    "architect-debug": "1.0.0",
+    "architect-stampit": "1.0.0",
+    "body-parser": "^1.14.1",
+    "compression": "^1.0.3",
+    "cookie-parser": "^1.4.0",
+    "cors": "^2.5.2",
+    "crypto": "0.0.3",
+    "csurf": "1.8.3",
+    "debug": "2.2.0",
+    "errorhandler": "^1.4.2",
+    "express-session": "1.12.1",
+    "helmet": "0.14.0",
+    "hpp": "0.2.0",
+    "json2csv": "3.2.0",
+    "loopback": "^2.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.1.0",
+    "loopback-datasource-juggler": "^2.41.0",
+    "method-override": "2.3.5",
+    "minimist": "^1.2.0",
+    "morgan": "^1.6.1",
+    "response-time": "^2.3.1",
+    "serve-favicon": "^2.0.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "description": ""
+}
