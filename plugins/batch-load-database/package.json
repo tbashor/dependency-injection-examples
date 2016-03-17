@@ -1,0 +1,27 @@
+{
+  "name": "batch-load-database",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": {
+    "name": "Todd Bashor",
+    "email": "todd@startersacademy.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "./plugin.js",
+  "private": true,
+  "plugin": {
+    "consumes": [
+      "debug",
+      "app"
+    ],
+    "provides": [
+      "batchLoad"
+    ]
+  },
+  "dependencies": {
+  },
+  "readme": ""
+}

@@ -1,0 +1,27 @@
+{
+  "name": "save-as-csv",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": {
+    "name": "Todd Bashor",
+    "email": "todd@startersacademy.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "./plugin.js",
+  "private": true,
+  "plugin": {
+    "consumes": [
+      "debug"
+    ],
+    "provides": [
+      "saveAsCsv"
+    ]
+  },
+  "dependencies": {
+    "json2csv": "3.2.0"
+  },
+  "readme": ""
+}
