@@ -1,16 +1,10 @@
 # Dependency Injection Examples
 
+This project uses architect.js to provide dependency injection (DI) on both the
+client and server. For more information about DI see the pdf in the
+`presentation` directory.
+
 ## Getting Started
-
-After cloning the repo:
-
-`npm install`
-
-`npm start`
-
-Browse to http://localhost:3000/explorer to get REST API documentation.
-
-## Environment Variables
 
 Use the following environment variables to maximize your development experience:
 
@@ -24,6 +18,12 @@ Use the following environment variables to maximize your development experience:
 
     NODE_ENV=development
 
+After cloning the repo:
+
+`npm install`
+
+`npm start`
+
 
 ## Developing the App Server
 
@@ -31,11 +31,7 @@ The app server follows standard loopback conventions for directory structure
 (server, client, common, etc).
 See https://docs.strongloop.com/display/public/LB/LoopBack for more information.
 
-To start the app server (without sockets):
-
-`npm run app`
-
-Browse to http://localhost:3000.
+Browse to http://localhost:3000 after starting the server.
 
 ## Developing Plugins
 
@@ -46,39 +42,43 @@ options in `plugins/index.js`. The configuration is used by the
 packages can be located anywhere but by convention they should be put in the
 `plugins` or `node_modules` directory.
 
-## During Development
 
-To restart the server when code changes, start the server with
-`npm run develop`.
+## Use DI on the Server to Generate Names
 
-To run the entire test suite (lint and server unit tests), use `npm run test`.
-
-## Generating User Names
-
-As players register for the game, the onboarding process will select and reserve
-a name for the user from the Player table. This process depends on the Player
-table containing a pool of pre-populated and randomized user names. The
-usernameGenerator service provides the ability to generate this pool of names.
+The server example allows you to generate a set of random names and save those
+names to the database or a csv file.
 
 ### Generate New User Names
 
-To generate new user names and populate the Player table:
+To generate new user names and populate the Person table:
 
-1. In `plugins/index.js`, in the options for the util-username-generator
-package, set the `saveToDatabase` option to `true`.
+1. In `plugins/index.js`, in the options for the `name-generator`
+package, set the `saveToDatabase` and `saveToFile` options to `true`.
 2. Set the `generateOnStart` to `100000` or less. Setting it above 100000 may
-cause the process to fail.
-3. Set the `prefixes` option to an array of prefixes. At least one prefix must be
-set, but that prefix can be `''`. For each prefix, the system will generate the
-number of records as defined in the `generateOnStart` option. For example, if
-you set `generateOnStart` to `100000` and you set the `prefixes` option to
-`['','','','','']`, the system will generate a total of 500000 records.
-4. Set the `NODE_ENV` variable to `development`. The usernameGenerator will only
-run in a development environment.
-5. In `server/datasources.json`, ensure that the `db` datasource is connecting
-to the database you want to populate.
-6. Start the application server. On startup the usernameGenerator service will
-use the options you set to generate a pool of unique, random usernames.
+cause the process to fail (due to the default limitations in node).
+3. Start the application server. On startup the nameGenerator service will
+use the options you set to generate a pool of unique, random names.
+4. View the csv file and the file version of the in-memory data store in the
+`data` directory.
+5. Explore the plugins directory to learn more about how the server-side plugins
+work together.
+
+## Use DI on the Client to Answer Math Problems
+
+The client example uses math plugins to solve problems.
+
+### View Client Examples
+
+To view an example with a basic math plugin:
+
+1. `npm start` the server.
+2. Browse to http://localhost:3000. You should see a simple math problem solved.
+
+To view an example with a more advanced plugin:
+
+1. After starting the server, browse to http://localhost:3000/advanced.html.
+2. Explore the client directory to learn more about how the client-side plugins
+work together.
 
 
 
