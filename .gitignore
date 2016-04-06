@@ -102,7 +102,6 @@ lib-cov
 .DS_STORE
 *.swo
 *.swp
-*.tgz
 *.iml
 
 
